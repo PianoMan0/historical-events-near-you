@@ -21,48 +21,37 @@
     <script>
         const events = [
             { name: 'Settlement of the Lenape', lat: 39.13, lon: -75.13},
-									 { name: 'Declaration of Independence (1776)', lat: 39.9526, lon: -75.1652},
-																		 { name: 'Whiskey Rebellion (1794)', lat: 40.4406, lon: -79.9959},
-																											 { name: 'Louisiana Purchase (1803)', lat: 37.9643, lon: -91.8318},
-																																				 { name: 'Chinese Communists Rise', lat: 50.5663, lon: 114.1322},
-{ name: 'Battle of Waterloo (1815)', lat: 50.67806, lon: 4.41222},
-									{ name: 'Signing of the Treaty of Versailles (1919)', lat: 48.8049, lon: -2.1204},
-																		{ name: 'Fall of the Berlin Wall (1989)', lat: 52.5200, lon: -13.4050},
-																											{ name: 'D-Day Invasion (1944)', lat: 49.1242, lon: -0.6173},
-																																				{ name: 'I Have a Dream Speech (1963)', lat: 38.9072, lon: -77.0369},
-																																													{ name: 'Apartheid End (1994)', lat: 26.2041, lon: -28.0473},
-																																													{ name: 'Alaska Good Friday Earthquake (1964)', lat: 61.1308, lon: 146.3483},
-																																																						{ name: 'Exxon Valdez Oil Spill in Prince William Sound (1989)', lat: 60.8833, lon: 147.8036},
-																																																						{ name: 'Ute Indian Removal', lat: 37.2172, lon: 108.4765},
-																																																															{ name: 'Founding of Hartford (1635)', lat: 41.7659, lon: 72.6816},
-																																																																								{ name: 'Battle of Olustee (1864)', lat: 30.2036, lon: 82.4014},
-																																																																																	{ name: 'Founding of Savannah (1733)', lat: 32.0809, lon: 81.0912},
-																																																																																										{ name: 'Attack on Pearl Harbor (1941)', lat: 21.3480, lon: 157.9730},
-																																																																																																			{ name: 'Fort Dearborn Massacre (1812)', lat: 41.8875, lon: 87.6191},
-																																																																																																			{ name: 'Haymarket Affair (1886)', lat: 41.8836, lon: 87.6446},
-																																																																																																			{ name: 'Battle of Tippecanoe (1811)', lat: 40.5408, lon: 86.8485},
-																																																																																																			{ name: 'Indianpolis Motor Speedway Opening', lat: 39.7950, lon: 86.2342},
-																																																																																																			{ name: 'Quantrills Raid on Lawrence (1863)', lat: 38.9717, lon: 95.2353},
-		{ name: 'Battle of Lobositz', lat: 50.512778, lon: 14.033333},
-																																																																																																																																																																														{ name: 'Amelia Earhart Born (1897)', lat: 39.5633, lon: 95.1217},
-																																																																																																																																																							
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            { name: 'Minquas Attacks', lat: 40.3363, lon: -76.4604 },
-            { name: 'Discovery of the Delaware Bay and River', lat: 39.07, lon: -75.17 },
+	    { name: 'Declaration of Independence (1776)', lat: 39.9526, lon: -75.1652},
+	    { name: 'Whiskey Rebellion (1794)', lat: 40.4406, lon: -79.9959},
+	    { name: 'Louisiana Purchase (1803)', lat: 37.9643, lon: -91.8318},
+	    { name: 'Chinese Communists Rise', lat: 50.5663, lon: 114.1322},
+            { name: 'Battle of Waterloo (1815)', lat: 50.67806, lon: 4.41222},
+	    { name: 'Signing of the Treaty of Versailles (1919)', lat: 48.8049, lon: -2.1204},
+	    { name: 'Fall of the Berlin Wall (1989)', lat: 52.5200, lon: -13.4050},
+	    { name: 'D-Day Invasion (1944)', lat: 49.1242, lon: -0.6173},
+	    { name: 'I Have a Dream Speech (1963)', lat: 38.9072, lon: -77.0369},
+	    { name: 'Apartheid End (1994)', lat: 26.2041, lon: -28.0473},
+            { name: 'Alaska Good Friday Earthquake (1964)', lat: 61.1308, lon: 146.3483},
+	    { name: 'Exxon Valdez Oil Spill in Prince William Sound (1989)', lat: 60.8833, lon: 147.8036},
+	    { name: 'Ute Indian Removal', lat: 37.2172, lon: 108.4765},
+	    { name: 'Founding of Hartford (1635)', lat: 41.7659, lon: 72.6816},
+            { name: 'Battle of Olustee (1864)', lat: 30.2036, lon: 82.4014},
+	    { name: 'Founding of Savannah (1733)', lat: 32.0809, lon: 81.0912},
+            { name: 'Attack on Pearl Harbor (1941)', lat: 21.3480, lon: 157.9730},
+	    { name: 'Fort Dearborn Massacre (1812)', lat: 41.8875, lon: 87.6191},
+	    { name: 'Haymarket Affair (1886)', lat: 41.8836, lon: 87.6446},
+	    { name: 'Battle of Tippecanoe (1811)', lat: 40.5408, lon: 86.8485},
+	    { name: 'Indianpolis Motor Speedway Opening', lat: 39.7950, lon: 86.2342},
+	    { name: 'Quantrills Raid on Lawrence (1863)', lat: 38.9717, lon: 95.2353},
+            { name: 'Battle of Lobositz', lat: 50.512778, lon: 14.033333},
+            { name: 'Minquas Attacks', lat: 40.3363, lon: -76.4604},
+            { name: 'Discovery of the Delaware Bay and River', lat: 39.07, lon: -75.17},
+	    { name: 'Battle of Mogadishu (1993)', lat: 2.0525, lon: 45.324722},
+            { name: 'Battle of Thermopylae', lat: 38.795833, lon: 22.536944},
+	    { name: 'Battle of Bulge', lat: 50.004167, lon: 5.72},
+	    { name: 'Battle of Little Bighorn (1876)', lat: 45.565, lon: -107.428889},
+	    { name: 'Battle of the Alamo (1836)', lat: 29.425556, lon: -98.486111},
+	    { name: 'Battle of Quebec (1775)', lat: 46.815, lon: -71.202222},
         ];
 
         function findLocation() {

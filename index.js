@@ -53,25 +53,27 @@ const events = [
             if (!navigator.geolocation) {
                 alert('Geolocation is not supported by your browser.');
                 return;
-            }
-
-            navigator.geolocation.getCurrentPosition((position) => {
-                const userLat = position.coords.latitude;
-                const userLon = position.coords.longitude;
-
-                // Calculate distances and sort events
-                const sortedEvents = events.map(event => ({
-                    ...event,
-                    distance: getDistance(userLat, userLon, event.lat, event.lon),
-                })).sort((a, b) => a.distance - b.distance);
-
-                // Display the 3 closest events
-                const closestEvents = sortedEvents.slice(0, 3);
-                displayEvents(closestEvents);
-            }, (error) => {
-                alert(`Error getting location: ${error.message}`);
-            });
         }
+
+        navigator.geolocation.getCurrentPosition(position => {
+            const userLat = position.coords.latitude;
+            const userLon = position.coords.longitude;
+
+            // Calculate distances and sort events
+            const sortedEvents = events.map(event => ({
+                ...event,
+                distance: getDistance(userLat, userLon, event.lat, event.lon),
+            })).sort((a, b) => a.distance - b.distance);
+
+            // Display the 3 closest events
+            const closestEvents = sortedEvents.slice(0, 3);
+            displayEvents(closestEvents);
+        }, error => {
+            alert(`Error getting location: ${error.message}`);
+        });
+    }
+
+
 
         function getDistance(lat1, lon1, lat2, lon2) {
             // Calculate distance between two coordinates (Haversine formula)
@@ -82,7 +84,7 @@ const events = [
             }
             const dLat = deg2rad(lat2-lat1);
             const dLon = deg2rad(lon2-lon1);
-            
+
             const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
                 Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
                 Math.sin(dLon/2) * Math.sin(dLon/2);

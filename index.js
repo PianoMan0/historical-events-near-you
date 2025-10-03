@@ -76,8 +76,13 @@ const events = [
         function getDistance(lat1, lon1, lat2, lon2) {
             // Calculate distance between two coordinates (Haversine formula)
             const R = 6371; // Radius of the earth in km
+
+            if (lat1 === 0 || lon1 === 0 || lat2 === 0 || lon2 === 0) {
+                return 0;
+            }
             const dLat = deg2rad(lat2-lat1);
             const dLon = deg2rad(lon2-lon1);
+            
             const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
                 Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
                 Math.sin(dLon/2) * Math.sin(dLon/2);

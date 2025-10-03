@@ -41,7 +41,12 @@ const events = [
         { name: 'Battle of Marathon (490 BC)', lat: 38.118056, lon: 23.978333},
         { name: 'Battle of Monte Cassino (1944)', lat: 41.483333, lon: 13.816667},
         { name: 'Battle of Chosin Reservoir (1950)', lat: 40.37, lon: 127.26},
-
+        { name: 'Ia Drang Valley (1965)', lat: 13.583333, lon: 107.716667},
+        { name: 'Battle of Xuân Lộc (1975)', lat: 10.923333, lon: 107.239167},
+        { name: 'Battle of Karbala (680)', lat: 32.615278, lon: 44.031389},
+        { name: 'Battle of Imphal (1944)', lat: 24.8167, lon: 93.95},
+        { name: 'Battle of Uhud (625)', lat: 24.5, lon: 39.61},
+        { name: 'Second Battle of Bull Run (1862)', lat: 38.81246, lon: -77.52131},
 ];
 
         function findLocation() {

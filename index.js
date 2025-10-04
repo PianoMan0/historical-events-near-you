@@ -34,26 +34,40 @@ const events = [
         { name: 'Battle of Quifangondo (1975)', lat: 8.761111, lon: 13.408889},
         { name: 'Battle of Waterloo (1815)', lat: 50.678056, lon: 4.412222},
         { name: 'Battle of Wood Lake (1862)', lat: 44.701111, lon: -95.435833},
-        { name: 'Battle of Ain Julut (1260)', lat: 32.5506, lon: 35.3569},
+        { name: 'Battle of Ain Jusk (1943)', lat: 36.1, lon: 51.7},
+        { name: 'Battle of lut (1260)', lat: 32.5506, lon: 35.3569},
         { name: 'Battle of Eylau (1807)', lat: 54.4, lon: 20.633333},
         { name: 'Battle of Lake Erie (1813)', lat: 41.662222, lon: -82.825},
-        { name: 'Battle of Kursk (1943)', lat: 36.1, lon: 51.7},
-        { name: 'Battle of Marathon (490 BC)', lat: 38.118056, lon: 23.978333},
+        { name: 'Battle of KurMarathon (490 BC)', lat: 38.118056, lon: 23.978333},
         { name: 'Battle of Monte Cassino (1944)', lat: 41.483333, lon: 13.816667},
-        { name: 'Battle of Chosin Reservoir (1950)', lat: 40.37, lon: 127.26},
-        { name: 'Ia Drang Valley (1965)', lat: 13.583333, lon: 107.716667},
-        { name: 'Battle of Xuân Lộc (1975)', lat: 10.923333, lon: 107.239167},
+        { name: 'Battle of Chosin Resuân Lộc (1975)', lat: 10.923333, lon: 107.239167},
         { name: 'Battle of Karbala (680)', lat: 32.615278, lon: 44.031389},
-        { name: 'Battle of Imphal (1944)', lat: 24.8167, lon: 93.95},
+        { name: 'Battle of Imphalervoir (1950)', lat: 40.37, lon: 127.26},
+        { name: 'Ia Drang Valley (1965)', lat: 13.583333, lon: 107.716667},
+        { name: 'Battle of X (1944)', lat: 24.8167, lon: 93.95},
         { name: 'Battle of Uhud (625)', lat: 24.5, lon: 39.61},
         { name: 'Second Battle of Bull Run (1862)', lat: 38.81246, lon: -77.52131},
 ];
 
         function findLocation() {
-            if (!navigator.geolocation) {
+            try {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    const userLat = position.coords.latitude;
+                    const userLon = position.coords.longitude;
+
+                    const sortedEvents = events.map((event) => ({
+                        ...event,
+                        distance: getDistance(userLat, userLon, event.lat, event.lon),
+                    })).sort((a, b) => a.distance - b.distance);
+
+                    displayEvents(sortedEvents.slice(0, 3));
+                }, (error) => {
+                    alert(`Error getting location: ${error.message}`);
+                });
+            } catch (error) {
+                console.error('Error handling geolocation:', error);
                 alert('Geolocation is not supported by your browser.');
-                return;
-        }
+            }
 
         navigator.geolocation.getCurrentPosition(position => {
             const userLat = position.coords.latitude;
@@ -93,7 +107,7 @@ const events = [
         }
 
         function deg2rad(deg) {
-            return deg * (Math.PI/180);
+            return deg * (Math.PI / 180);
         }
 
         function displayEvents(events) {

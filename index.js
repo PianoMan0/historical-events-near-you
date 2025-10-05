@@ -45,6 +45,7 @@ const events = [
     { name: 'Battle of X (1944)', lat: 24.8167, lon: 93.95 },
     { name: 'Battle of Uhud (625)', lat: 24.5, lon: 39.61 },
     { name: 'Second Battle of Bull Run (1862)', lat: 38.81246, lon: -77.52131 },
+    { name: 'Battle of Jerusalem (1917)', lat: 31.776389, lon: 35.2275 },
 ];
 
 function findLocation() {
